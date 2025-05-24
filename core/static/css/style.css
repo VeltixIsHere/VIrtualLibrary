@@ -1,0 +1,22 @@
+body {
+    background-color: #32cd32;
+}
+
+.books {
+    display: flex;
+    text-align:center;
+}
+.book {
+    border : 3px solid black;
+    margin: 7px;
+}
+
+.header-image {
+    height : 33vh;
+    width : 100%;
+    margin-top : 0;
+    padding :0;
+    box-sizing : border-box;
+    background-image: url('/static/images/background-details.jpg');
+    display: flex;
+}

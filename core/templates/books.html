@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VirtualLibrary</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+
+</head>
+<body>
+<h1>Our Books</h1>
+<div class="books">
+{% for book in books %}
+    <div class="book">
+        <div class="book-title">{{ book.title }}</div>
+        <div class="book-cover"><img src="{{ book.image }}"></div>
+        <a href="book/{{book.id}}/">Text</a>
+    </div>
+    {% endfor %}
+</a>
+</div>
+</body>
+</html>
