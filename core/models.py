@@ -5,12 +5,13 @@ from django.contrib.auth import get_user_model
 class Book(models.Model):
     title = models.CharField(max_length= 50)
     description = models.CharField(max_length = 255)
-    author = models.CharField(max_length= 50)
+    author = models.CharField(max_length = 50)
     published_date = models.DateField()
     content = models.TextField()
     image = models.CharField(max_length = 255)
     def __str__(self):
         return self.title
+
 
 class Comment(models.Model):
     book = models.ForeignKey(Book, on_delete = models.CASCADE, related_name='comments')

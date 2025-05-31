@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from .models import Comment
 
 class BookForm(forms.Form):
     title = forms.CharField(widget=forms.TextInput(attrs={'class': 'book-title'}), max_length=50)
@@ -13,5 +14,11 @@ class RegisterForm(UserCreationForm):
         model = User
         fields = ['username', 'email', 'password1', 'password2']
 
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['content']
 
 

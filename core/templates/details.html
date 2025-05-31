@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Details</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/comment.css' %}" type="text/css">
 
 </head>
 <body>
@@ -29,8 +30,20 @@
 </div>
     <div class="book">
 
-        <div class="content">{{ book.content}}</div>
+        <div class="content">{{ book.content }}</div>
 
     </div>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% for comment in comments %}
+    <div class="comment">
+        <div class="comment-user"><h4>{{ comment.user }}</h4></div>
+        <div class="comment-content">{{ comment.content }}</div>
+        <div class="comment-created-at"><h6>{{ comment.created_at }}</h6></div>
+    </div>
+{% endfor %}
 </body>
 </html>
